@@ -41,12 +41,21 @@ function addStudentToTable(student){
 }
 
 function calcularPromedio(){
+    notas=[]
     if (students.length===0){
         averageDiv.textContent="Promedio General del Curso:N/A"
         return;
     }
-    const total=students.reduce((sum,s)=>sum+s.grade,0);
-    const average=total/students.length;
-    averageDiv.textContent=`Promedio General del Curso: ${average.toFixed(2)}`
+
+        for (let alumno of students){
+        console.log(alumno) //mostrar lo que recorre la variable alumno
+        notas.push(parseFloat(alumno.grade))
+    }
+    
+    const suma = notas.reduce((acumulador, valorActual) => acumulador + valorActual,0);//linea para realizar el calculo de el promedio
+
+    let promedio = suma/students.length
+    averageDiv.textContent=`Promedio de Calificaciones: ${promedio.toFixed(2)}`//mostrar el promedio general
+
 }
 

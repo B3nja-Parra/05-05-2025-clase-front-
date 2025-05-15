@@ -1,21 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        #average{
-            margin: 16px 0;
-            padding: 10px;
-            background-color: aliceblue;
-            border: 2px solid #0074D9;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #0074D9;
-        }
-    </style>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <h2>Notas Asignatura Front-End</h2>
@@ -24,19 +13,19 @@
     <form id="studentForm">
         <div>
             <label for="name">Nombre : </label>
-            <input type="text" id="name" required>
+            <input type="text" id="name" required  oninvalid="this.setCustomValidity('Complete el campo \'Nombre\'')"  oninput="this.setCustomValidity(''); this.checkValidity();">
         </div>
         <div>
             <label for="lastName">Apellido : </label>
-            <input type="text" id="lastName" required>
+            <input type="text" id="name" required  oninvalid="this.setCustomValidity('Complete el campo \'Apellido\'')"  oninput="this.setCustomValidity(''); this.checkValidity();">
         </div>
         <div>
             <label for="grade">Nota (1.0 - 7.0) : </label>
-            <input type="number" id="grade" step="0.1" min="1" max="7" required>
+            <input type="number" id="number" required  oninvalid="this.setCustomValidity('Complete el campo \'Nota\'')"  oninput="this.setCustomValidity(''); this.checkValidity();">
         </div>
         <div>
             <label for="date">Fecha : </label>
-            <input type="date" id="date" required>
+            <input type="date" id="date" required  oninvalid="this.setCustomValidity('Complete el campo \'Fecha\'')"  oninput="this.setCustomValidity(''); this.checkValidity();">
         </div>
         <button type="submit">Guardar Estudiante</button>
     </form>
