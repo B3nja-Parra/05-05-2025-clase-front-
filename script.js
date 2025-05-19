@@ -39,7 +39,7 @@ function addStudentToTable(student){
     <td> <button class="delete">Eliminar</button></td>
     `;
     row.querySelector(".delete").addEventListener("click",function(){
-        deleteEstidiante();
+        deleteEstidiante(student,row);
     });
 
     tableBody.appendChild(row);
