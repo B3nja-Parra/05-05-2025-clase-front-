@@ -17,11 +17,11 @@
         </div>
         <div>
             <label for="lastName">Apellido : </label>
-            <input type="text" id="name" required  oninvalid="this.setCustomValidity('Complete el campo \'Apellido\'')"  oninput="this.setCustomValidity(''); this.checkValidity();">
+            <input type="text" id="lastName" required  oninvalid="this.setCustomValidity('Complete el campo \'Apellido\'')"  oninput="this.setCustomValidity(''); this.checkValidity();">
         </div>
         <div>
             <label for="grade">Nota (1.0 - 7.0) : </label>
-            <input type="number" id="number" required  oninvalid="this.setCustomValidity('Complete el campo \'Nota\'')"  oninput="this.setCustomValidity(''); this.checkValidity();">
+            <input type="number" id="grade" required step="0.1" min="1" max="7"   oninvalid="this.setCustomValidity('Complete el campo \'Nota\'')"  oninput="this.setCustomValidity(''); this.checkValidity();">
         </div>
         <div>
             <label for="date">Fecha : </label>
