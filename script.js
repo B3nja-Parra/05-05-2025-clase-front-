@@ -35,6 +35,7 @@ form.addEventListener("submit", function (e) {
     }
 
     calcularPromedio();
+    actualizarEstadisticas();
     form.reset();
 });
 
@@ -71,12 +72,14 @@ function calcularPromedio() {
     averageDiv.textContent = `Promedio de Calificaciones: ${promedio.toFixed(2)}`;
 }
 
+
 function deleteEstudiante(student, row) {
     const index = students.indexOf(student);
     if (index > -1) {
         students.splice(index, 1);
         row.remove();
         calcularPromedio();
+        actualizarEstadisticas();
     }
 }
 
@@ -96,4 +99,14 @@ function actualizarTabla() {
     students.forEach(student => {
         addStudentToTable(student);
     });
+}
+
+function actualizarEstadisticas() {
+    const total = students.length;
+    const aprobados = students.filter(s => s.grade >= 4.0).length;
+    const reprobados = students.filter(s => s.grade < 4.0).length;
+
+    document.getElementById("totalStudents").textContent = `Cantidad de estudiantes: ${total}`;
+    document.getElementById("aprobados").textContent = `Aprobados: ${aprobados}`;
+    document.getElementById("reprobados").textContent = `Reprobados: ${reprobados}`;
 }
